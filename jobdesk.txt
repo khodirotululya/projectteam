@@ -1,0 +1,11 @@
+button menyimpan pada pada setiap menu bend yayasan
+tunai, bank, dana keluar
+button menyimpan pada menu bend dana bos
+laporan yayasan -> menu bend yayasan
+laporan keluar -> menu bend pengeluaran
+laporan dana bos -> menu bend danabos
+
+user = sdm-kampa1@gmail.com
+pass = administrator
+
+nanti nek ada tambahan aku kabarin ya... aku juga ngerjain lagi
