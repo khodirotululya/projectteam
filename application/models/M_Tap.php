@@ -127,8 +127,8 @@ class M_Tap extends CI_Model{
         $kasbank = $this->db->query("SELECT nominal, keterangan FROM kasbank WHERE time = '$t'")->result();
         $kaskeluar = $this->db->query("SELECT nominal, keterangan FROM kaskeluar WHERE time = '$t'")->result();
 
-         return array('kastunai'=>$kastunai,'kasbank'=>$kasbank,'kaskeluar'=>$kaskeluar,'tanggal'=>$t);
-
+         return array('kastunai'=>$kastunai,'kasbank'=>$kasbank,'kaskeluar'=>$kaskeluar, 'spp'=>$spp, 'ujian'=>$ujian, 'snack'=>$snack, 'catering'=>$catering, 'pemasukan'=>$pemasukan, 'pendaftaran'=>$pendaftaran, 'tanggal'=>$t);
+ 
     }
 
     function cek_laporanBos(){

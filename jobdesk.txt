@@ -4,6 +4,10 @@ button menyimpan pada menu bend dana bos
 laporan yayasan -> menu bend yayasan
 laporan keluar -> menu bend pengeluaran
 laporan dana bos -> menu bend danabos
+button cetak perperiode tanggal
+
+
+
 
 user = sdm-kampa1@gmail.com
 pass = administrator

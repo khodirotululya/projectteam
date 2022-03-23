@@ -100,7 +100,7 @@
             processing: true,
             serverSide: true,
             ajax: {
-                "url": "<?= base_url().$this->uri->segment(1).'/getData'?>",
+                "url": "<?= base_url().$this->uri->segment(1).'/getAllData'?>",
                 "type": "POST"
             },
             columns: [

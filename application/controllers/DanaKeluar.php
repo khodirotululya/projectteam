@@ -14,6 +14,7 @@ class DanaKeluar extends CI_Controller {
 		get_breadcrumb();
 		$this->load->model('M_'.$this->parents,'mod');
 		$this->load->library('form_validation');
+		$this->load->model('M_Tap');
 		$this->load->library('Datatables'); 
 	}
 

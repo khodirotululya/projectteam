@@ -86,7 +86,7 @@
             },
             columns: [
                 {
-                    "data": "id",
+                    "data": "id_bos",
                     "orderable": false,
                     "searchable": false
                 },

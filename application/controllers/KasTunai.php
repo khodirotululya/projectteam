@@ -13,6 +13,7 @@ class KasTunai extends CI_Controller {
 		is_login();
 		get_breadcrumb();
 		$this->load->model('M_'.$this->parents,'mod');
+		$this->load->model('M_Tap');
 		$this->load->library('form_validation');
 		$this->load->library('Datatables'); 
 	}

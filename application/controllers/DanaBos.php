@@ -5,7 +5,7 @@ class DanaBos extends CI_Controller {
 
 	private $parents = 'DanaBos';
 	private $icon	 = 'fa fa-cart-plus';
-	var $table 		 = 'pengeluaran';
+	var $table 		 = 'danabos';
 
 	function __construct(){
 		parent::__construct();
@@ -13,6 +13,7 @@ class DanaBos extends CI_Controller {
 		is_login();
 		get_breadcrumb();
 		$this->load->model('M_'.$this->parents,'mod');
+		$this->load->model('M_Tap');
 		$this->load->library('form_validation');
 		$this->load->library('Datatables'); 
 	}
