@@ -76,6 +76,7 @@ class SPP extends CI_Controller {
 
 	        $insert = $this->M_General->insert($this->table,$insert);
 	        $this->M_General->update_kas('kas_masuk',$total);
+			$this->M_General->update_kas_yayasan('kas_masuk',$total);
 	        $data['status'] = TRUE;
     		
     	}

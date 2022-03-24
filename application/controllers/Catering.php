@@ -125,7 +125,7 @@ class Catering extends CI_Controller {
 		$total = $this->input->post('seluruh');
 		$this->db->insert_batch('catering',$data);
 		$this->M_General->update_kas('kas_masuk',$total);
-		
+		$this->M_General->update_kas_yayasan('kas_masuk',$total);
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
 	}
 

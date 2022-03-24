@@ -43,6 +43,7 @@ class Auth extends CI_Controller {
 					);
 				$this->session->set_userdata( $data );
 					$this->M_General->cek_laporan();
+					$this->M_General->cek_laporan_kas();
 				redirect('Beranda','refresh');
 				}
 				else{

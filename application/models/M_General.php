@@ -107,8 +107,33 @@ class M_General extends CI_Model{
         }
     }
 
+    function cek_laporan_kas(){
+        date_default_timezone_set('Asia/Jakarta');
+        $this->db->where('tanggal',date('Y-m-d'));
+        $cek = $this->db->get('laporankas')->num_rows();
+        if ($cek > 0){
+        return;
+        }
+        else{
+            $sql = $this->db->query("SELECT kas_masuk,kas_keluar,saldo_awal FROM laporankas ORDER BY tanggal DESC LIMIT 1")->row_array();
+            if(!empty($sql)){
+                $kas_awal = $sql['saldo_awal'] + $sql['kas_masuk'] - $sql['kas_keluar'];
+                $this->db->insert('laporankas',array('tanggal'=>date('Y-m-d'),'saldo_awal'=>$kas_awal));
+            }
+            else{
+                $this->db->insert('laporankas',array('tanggal'=>date('Y-m-d')));
+            }
+        return;
+        }
+    }
+
     function update_kas($tipe,$nominal){
         $ini = $this->db->query("UPDATE laporan SET $tipe = $tipe + '$nominal'  WHERE tanggal = DATE(NOW())");
+        return;
+    }
+
+    function update_kas_yayasan($tipe,$nominal){
+        $ini = $this->db->query("UPDATE laporankas SET $tipe = $tipe + '$nominal'  WHERE tanggal = DATE(NOW())");
         return;
     }
 
