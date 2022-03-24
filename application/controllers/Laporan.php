@@ -44,11 +44,11 @@ class Laporan extends CI_Controller {
 
 		 $print = $this->mod->Cetak_periode($a,$awal,$akhir);
 
-		 if($print)
-		 	$data['status'] = TRUE;
-		 $data['status'] = FALSE;
+		//  if($print)
+		//  	$data['status'] = TRUE;
+		//  $data['status'] = FALSE;
 
-		  $this->output->set_content_type('application/json')->set_output(json_encode($data));
+		//   $this->output->set_content_type('application/json')->set_output(json_encode($data));
 	}
 
 		function Detail($id){

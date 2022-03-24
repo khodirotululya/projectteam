@@ -30,7 +30,7 @@ class LaporanYas extends CI_Controller {
         $this->template->views('Backend/'.$this->parents.'/v_'.$this->parents,$data);
 	}
 
-	function getData (){
+	function getAllData(){
 		header('Content-Type:application/json');
 		echo $this->mod->getAllData();
 		// echo $this->db->last_query();

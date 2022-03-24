@@ -66,7 +66,8 @@ class KasBank  extends CI_Controller {
 	                );
 
 	        $insert = $this->M_Tap->insert($this->table,$insert);
-	        $this->M_Tap->update_kas('kas_masuk',$total);
+	        // $this->M_Tap->update_kas('kas_masuk',$total);
+			$this->M_General->update_kas_yayasan('kas_masuk',$total);
 	        $data['status'] = TRUE;
 
         $this->output->set_content_type('application/json')->set_output(json_encode($data));

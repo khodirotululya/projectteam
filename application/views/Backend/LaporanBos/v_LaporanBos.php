@@ -41,11 +41,11 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label class="control-label"> Tanggal Awal</label>
-                    <div><input type="text" autocomplete="off" placeholder="tanggal awal" class="form-control datepicker" required="" name="awal"></div>
+                    <div><input type="text" autocomplete="off" placeholder="tanggal awal" class="form-control datepicker" required="" name="awal" id="awal"></div>
                 </div>
                 <div class="form-group">
                     <label class="control-label"> Tanggal Akhir</label>
-                    <div><input type="text" autocomplete="off"  placeholder="tanggal akhir" class="form-control datepicker" required="" name="akhir"></div>
+                    <div><input type="text" autocomplete="off"  placeholder="tanggal akhir" class="form-control datepicker" required="" name="akhir" id="akhir"></div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -174,17 +174,20 @@
                 else error.insertAfter(element.parent());
             },
             submitHandler: function (form) {
-                var isi = $('#form').serialize();
-                $.ajax({
-                    url: "<?=base_url('Cetak/Cetak_periode')?>",
-                    type:"POST",
-                    data: isi,
-                    dataType:"JSON",
-                    success:function(data){
-                        $('#modal-print').modal('hide');
-                        $('#form')[0].reset();
-                    }
-                });
+                var awal = $('#awal').val();
+                var akhir = $('#akhir').val();
+                window.open("<?=base_url('Cetak/Cetak_periode/')?>"+awal+"/"+akhir, "_blank");
+                // var isi = $('#form').serialize();
+                // $.ajax({
+                //     url: "<?=base_url('Cetak/Cetak_periode')?>",
+                //     type:"POST",
+                //     data: isi,
+                //     dataType:"JSON",
+                //     success:function(data){
+                //         $('#modal-print').modal('hide');
+                //         $('#form')[0].reset();
+                //     }
+                // });
             },
             invalidHandler: function (form) {}
         });
