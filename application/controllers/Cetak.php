@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Cetak extends CI_Controller{
     function __construct() {
         parent::__construct();
+        @ini_set('magic_quotes_runtime', false);
          $this->load->library('pdf');
           is_login();
     }
@@ -151,10 +152,10 @@ foreach($data['pengeluaran'] as $r){
        $pdf->Output();  
     }
 
-    function Cetak_periode(){
+    function Cetak_periode($awal, $akhir){
 
-        $awal = $this->input->post('awal');
-        $akhir = $this->input->post('akhir');
+        // $awal = $this->input->post('awal');
+        // $akhir = $this->input->post('akhir');
 
         $this->db->where('tanggal >=',$awal);
         $this->db->where('tanggal <=',$akhir);
@@ -217,10 +218,10 @@ foreach($data['pengeluaran'] as $r){
        $pdf->Cell(35, 14, '', 0, 1);
        $pdf->Cell(125, 8, '', 0, 0);
        $pdf->Cell(35, 9, 'Rahmad, S.Ag, M.Sy', 0, 0);
-       $pdf->Output();  
+       $pdf->Output('D');  
 
-        $data['status'] = TRUE;
+        // $data['status'] = TRUE;
 
-        $this->output->set_content_type('application/json')->set_output(json_encode($data));
+        // $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 }

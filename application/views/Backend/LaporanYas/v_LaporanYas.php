@@ -173,17 +173,20 @@
                 else error.insertAfter(element.parent());
             },
             submitHandler: function (form) {
-                var isi = $('#form').serialize();
-                $.ajax({
-                    url: "<?=base_url('Cetak/Cetak_periode')?>",
-                    type:"POST",
-                    data: isi,
-                    dataType:"JSON",
-                    success:function(data){
-                        $('#modal-print').modal('hide');
-                        $('#form')[0].reset();
-                    }
-                });
+                var awal = $('#awal').val();
+                var akhir = $('#akhir').val();
+                window.open("<?=base_url('Cetak/Cetak_periode/')?>"+awal+"/"+akhir, "_blank");
+                // var isi = $('#form').serialize();
+                // $.ajax({
+                //     url: "<?=base_url('Cetak/Cetak_periode')?>",
+                //     type:"POST",
+                //     data: isi,
+                //     dataType:"JSON",
+                //     success:function(data){
+                //         $('#modal-print').modal('hide');
+                //         $('#form')[0].reset();
+                //     }
+                // });
             },
             invalidHandler: function (form) {}
         });
