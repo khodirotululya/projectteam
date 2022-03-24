@@ -64,7 +64,7 @@ class Pengeluaran extends CI_Controller {
 	                );
 
 	        $insert = $this->M_General->insert($this->table,$insert);
-	           $this->M_General->update_kas('kas_keluar',$total);
+	           $this->M_General->update_kas_keluar('kas_keluar',$total);
 			   $this->M_General->update_kas_yayasan('kas_keluar',$total);
 	        $data['status'] = TRUE;
 

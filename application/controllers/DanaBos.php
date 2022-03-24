@@ -65,7 +65,7 @@ class DanaBos extends CI_Controller {
 	                );
 
 	        $insert = $this->M_Tap->insert($this->table,$insert);
-	           $this->M_Tap->update_kasbos('kas_masuk',$total);
+			$this->M_General->update_kas_bos('kas_masuk',$total);
 	        $data['status'] = TRUE;
 
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
